@@ -34,8 +34,6 @@ while True: # First loop
         # Use .append function to add new user input.
         # Personal Information
         full_name.append(input("What is your full name? "))
-        print(f"Hi, {full_name}!")
-        
         birthday.append(input("When is your birthday? "))
         age.append(int(input("How old are you? ")))
         if age[-1] >= 18: # To enter last element 
@@ -61,9 +59,9 @@ while True: # First loop
 
         print("Wow! You have good taste!")
         print(f"Thank you for answering, {full_name[-1]}!")
-
+        
         # To store user's input in a txt file
-        with open("user_info.txt","a") as file:
+        with open(f"users_info.txt", "a") as file:
             file.write(f"--- User Information ---\n")
             file.write(f"Full Name: {full_name[-1]}\n")
             file.write(f"Birthday: {birthday[-1]}\n")
@@ -79,21 +77,14 @@ while True: # First loop
             file.write(f"Favorite Color: {favorite_color[-1]}\n")
             file.write(f"Favorite Artist: {favorite_artist[-1]}\n")
             file.write(f"Favorite Song: {favorite_song[-1]}\n\n")
-        
-        while True:
-            another_user_infos = input("Do you want to add another user? Yes or No? ")
-            if another_user_infos == "Yes":
-                break # Exit the inner loop if the user enters "Yes"
-            elif another_user_infos == "No":
-                print("Thank you for answering!")
-                exit() # Terminate the program
-            else:
-                print("Invalid input. Please try again and follow the text format.")
-                continue # To continue to ask if user want to add another user 
+        another_user = input("Do you want to add another user? (Yes/No): ")
+        if another_user.lower() != "yes":
+            break
 
-    except ValueError:
-        print("Input invalid. Try aagin :)")
+    except ValueError as e:
+        print(f"Invalid input: {e}") # using e as a variable for error
 
+print("Thank you for answering!")
 
 
 
