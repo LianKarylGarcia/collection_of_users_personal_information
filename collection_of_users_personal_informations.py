@@ -34,7 +34,7 @@ while True: # First loop
         # Use .append function to add new user input.
         # Personal Information
         full_name.append(input("What is your full name? "))
-        print(f"Hi {full_name}!")
+        print(f"Hi, {full_name}!")
         
         birthday.append(input("When is your birthday? "))
        
@@ -73,7 +73,28 @@ while True: # First loop
         # To store user's input in a txt file
         with open("user_info.txt","a") as file:
             file.write(f"Full Name: {full_name[-1]}\n")
-    
+            file.write(f"Birthday: {birthday[-1]}\n")
+            file.write(f"Age: {age[-1]}\n")
+            file.write(f"Birthplace: {birthplace[-1]}\n")
+            file.write(f"Address: {address[-1]}\n")
+            file.write(f"Mother's Name: {mothers_name[-1]}\n")
+            file.write(f"Father's Name: {fathers_name[-1]}\n")
+            file.write(f"School: {school[-1]}\n")
+            file.write(f"Year: {year[-1]}\n")
+            file.write(f"Course: {course[-1]}\n")
+            file.write(f"Favorite Movie: {favorite_movie[-1]}\n")
+            file.write(f"Favorite Color: {favorite_color[-1]}\n")
+            file.write(f"Favorite Artist: {favorite_artist[-1]}\n")
+            file.write(f"Favorite Song: {favorite_song[-1]}\n\n")
+        
+        another_user_infos = input("Do you want to add another user? Yes or No?")
+        if another_user_infos == "Yes":
+            continue
+        elif another_user_infos == "No":
+            break
+        else:
+            print("Invalid input. Please try again and follow the text format.")
+
     except ValueError:
         print("Input invalid. Try aagin :)")
 
