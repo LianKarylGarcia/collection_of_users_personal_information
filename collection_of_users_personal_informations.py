@@ -26,7 +26,7 @@ favorite_song = []
 while True: # First loop
     try:
         # To clear the file for new data
-        with open("user_infos.txt","a") as file:
+        with open("user_infos.txt","w") as file:
             pass 
 
         print("Greetings, please answer the following questions about yourself.")
@@ -64,6 +64,7 @@ while True: # First loop
 
         # To store user's input in a txt file
         with open("user_info.txt","a") as file:
+            file.write(f"--- User Information ---\n")
             file.write(f"Full Name: {full_name[-1]}\n")
             file.write(f"Birthday: {birthday[-1]}\n")
             file.write(f"Age: {age[-1]}\n")
@@ -82,11 +83,13 @@ while True: # First loop
         while True:
             another_user_infos = input("Do you want to add another user? Yes or No? ")
             if another_user_infos == "Yes":
-                continue # Continue the loop if the user enters "Yes"
+                break # Exit the inner loop if the user enters "Yes"
             elif another_user_infos == "No":
-                break # Exit the loop if the user enters "No"
+                print("Thank you for answering!")
+                exit() # Terminate the program
             else:
                 print("Invalid input. Please try again and follow the text format.")
+                continue # To continue to ask if user want to add another user 
 
     except ValueError:
         print("Input invalid. Try aagin :)")
