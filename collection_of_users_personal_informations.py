@@ -37,37 +37,29 @@ while True: # First loop
         print(f"Hi, {full_name}!")
         
         birthday.append(input("When is your birthday? "))
-       
-        age.append(input("How old are you? "))
-        if age >= 18:
+        age.append(int(input("How old are you? ")))
+        if age[-1] >= 18: # To enter last element 
             print("You are an adult")
         else:
             print("You are a minor")
 
         birthplace.append(input("Where were you born? "))
-        
         address.append(input("Where do you live? "))
-
         mothers_name.append(input("What is your mother's name? "))
         fathers_name.append(input("What is your father's name? "))
             
         # Education
         school.append(input("Where do you study? "))
-
         year.append(input("What year are you? "))
-        
         course.append(input("What is your course? "))
-        
+
         # Preferences
         favorite_movie.append(input("What is your favorite movie? "))
-
         favorite_color.append(input("What is your favorite color? "))
-        
         favorite_artist.append(input("Who is your favorite artist? "))
         favorite_song.append(input("What is your favorite song? "))
 
         print("Wow! You have good taste!")
-
         print(f"Thank you for answering, {full_name[-1]}!")
 
         # To store user's input in a txt file
@@ -87,13 +79,14 @@ while True: # First loop
             file.write(f"Favorite Artist: {favorite_artist[-1]}\n")
             file.write(f"Favorite Song: {favorite_song[-1]}\n\n")
         
-        another_user_infos = input("Do you want to add another user? Yes or No?")
-        if another_user_infos == "Yes":
-            continue
-        elif another_user_infos == "No":
-            break
-        else:
-            print("Invalid input. Please try again and follow the text format.")
+        while True:
+            another_user_infos = input("Do you want to add another user? Yes or No? ")
+            if another_user_infos == "Yes":
+                continue # Continue the loop if the user enters "Yes"
+            elif another_user_infos == "No":
+                break # Exit the loop if the user enters "No"
+            else:
+                print("Invalid input. Please try again and follow the text format.")
 
     except ValueError:
         print("Input invalid. Try aagin :)")
