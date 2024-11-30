@@ -25,11 +25,17 @@ favorite_song = []
 
 while True: # First loop
     try:
+        # To clear the file for new data
+        with open("user_infos.txt","a") as file:
+            pass 
+
         print("Greetings, please answer the following questions about yourself.")
         
+        # Use .append function to add new user input.
+        # Personal Information
         full_name.append = input("What is your full name? ")
         print(f"Hi {full_name}!")
-       
+        
         birthday.append = input("When is your birthday? ")
        
         age.append = int(input("How old are you? "))
@@ -39,31 +45,41 @@ while True: # First loop
             print("You are a minor")
 
         birthplace.append = input("Where were you born? ")
-       
+        
         address.append = input("Where do you live? ")
 
         mothers_name.append = input("What is your mother's name? ")
 
         fathers_name.append = input("What is your father's name? ")
-  
+            
+        # Education
         school.append = input("Where do you study? ")
 
         year.append = input("What year are you? ")
-       
+        
         course.append = input("What is your course? ")
-    
+        
+        # Preferences
         favorite_movie.append = input("What is your favorite movie? ")
 
         favorite_color.append = input("What is your favorite color? ")
-      
+        
         favorite_artist.append = input("Who is your favorite artist? ")
-
         favorite_song.append = input("What is your favorite song? ")
 
         print("Wow! You have good taste!")
 
-        print(f"Thank you for answering, {full_name}!")
+        print(f"Thank you for answering, {full_name[-1]}!")
 
-    except: 
-        print("Invalid Input")
+        # To store user's input in a txt file
+        with open("user_info.txt","a") as file:
+            file.write(f"Full Name: {full_name[-1]}\n")
+    
+    except ValueError:
+        print("Input invalid. Try aagin :)")
+
+
+
+
+
 
