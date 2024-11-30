@@ -6,6 +6,7 @@
 # Personal Information
 full_name = []
 birthday = []
+age = []
 birthplace = []
 address = []
 mothers_name = []
@@ -28,5 +29,21 @@ while True: # First loop
         
         print("Please follow this format: Surname, First Name Middle Initial")
         full_name = input("What is your full name? ")
+
+        birthday = input("When is your birthday? ")
+        age = int(input("How old are you? "))
+        birthplace = input("When were you born? ")
+        address = input("Where do you live? ")
+        mothers_name = input("What is your mother's name? ")
+        fathers_name = input("What is your father's name? ")
+
+        school = input("Where do you study? ")
+        year = input("What year are you? ")
+        course = input("What is your course? ")
+
+        favorite_movie = input("What is your favorite movie? ")
+        favorite_color = input("What is your favorite color? ")
+        favorite_artist = input("Who is your favorite artist? ")
+        favorite_song = input("What is your favorite song? ")
     except: 
         print("Invalid Input")
